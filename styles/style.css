@@ -1,0 +1,122 @@
+.outerDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.innerDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(167, 167, 167);
+  border-radius: 50%;
+  border: solid black 10px;
+  margin: 150px;
+}
+
+button {
+    background-color: rgb(187, 185, 185);
+    font-size: 17px;
+    width: 70px;
+    height: 30px;
+    border-style: none;
+    border-radius: 40%;
+    box-shadow: 2px 1px 2px black;
+    cursor: pointer;
+}
+button:hover {
+    background-color: rgb(198, 196, 196);
+    transform: scale(1.05);
+}
+.count {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -14px;
+  width: 50px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: rgb(66, 22, 22);
+}
+
+.count > p {
+  color: white;
+  
+}
+
+.top {
+  display: flex;
+  justify-content: center;
+}
+
+.green {
+  background-color: rgb(1, 94, 1);
+  width: 220px;
+  height: 220px;
+  border-radius: 16em 0 0 0;
+  border: solid black 20px;
+  border-right: solid black 5px;
+  border-bottom: solid black 5px;
+
+}
+
+.green:hover {
+  background-color: rgb(1, 142, 1);
+  cursor: pointer;
+}
+
+.red {
+  background-color: rgb(186, 2, 2);
+  width: 220px;
+  height: 220px;
+  border-radius: 0 16em 0 0;
+  border: solid black 20px;
+  border-left: solid black 5px;
+  border-bottom: solid black 5px;
+
+}
+
+.red:hover {
+  background-color: rgb(255, 37, 37);
+  cursor: pointer;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+
+}
+
+.yellow {
+  background-color: rgb(163, 163, 0);
+  width: 220px;
+  height: 220px;
+  border-radius: 0 0 0 16em;
+  border: solid black 20px;
+  border-top: solid black 5px;
+  border-right: solid black 5px;
+
+}
+
+.yellow:hover {
+  background-color: rgb(252, 252, 67);
+  cursor: pointer;
+}
+
+.blue {
+  background-color: rgb(3, 3, 159);
+  width: 220px;
+  height: 220px;
+  border-radius: 0 0 16em 0;
+  border: solid black 20px;
+  border-left: solid black 5px;
+  border-top: solid black 5px;
+
+}
+
+.blue:hover {
+  background-color: blue;
+  cursor: pointer;
+}
