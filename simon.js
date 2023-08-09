@@ -1,6 +1,7 @@
 /*-------------------------------- Constants --------------------------------*/
 const colors = ["green", "red", "yellow", "blue"]
 
+
 /*-------------------------------- Variables --------------------------------*/
 let count = 1;
 let turnColors = [];
@@ -9,14 +10,22 @@ let color = "";
 /*------------------------ Cached Element References ------------------------*/
 // Buttons
 const startBtn = document.getElementById("start")
+const audioGreen = document.getElementById("audio1");
+const audioRed = document.getElementById("audio2");
+const audioYellow = document.getElementById("audio3");
+const audioBlue = document.getElementById("audio4");
+const green = document.getElementsByClassName("green");
+// const playGreen =  document.getElementById("audioGreen")
 
 /*----------------------------- Event Listeners -----------------------------*/
     startBtn.addEventListener("click", init())
+    
 
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
         randomColor()
+        // playSound(color)
 }
 
 function randomColor() {
@@ -25,6 +34,15 @@ function randomColor() {
     turnColors.push(color)
     console.log(turnColors)
 }
+
+// function playSound(currColor) {
+//     if(currColor === "green") {
+//         audioGreen.play();
+
+//     }
+// }
+
+//-----------
 
 
 
@@ -41,10 +59,7 @@ function randomColor() {
 
 // const clickSound = document.querySelectorAll("audio");
 
-const audioGreen = document.getElementById("audio1");
-const audioRed = document.getElementById("audio2");
-const audioYellow = document.getElementById("audio3");
-const audioBlue = document.getElementById("audio4");
+
 
 
 audioGreen.addEventListener("click", function() {
