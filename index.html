@@ -1,45 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
-    <!-- favicon 404 error -->
-    <link rel="shortcut icon" href="#">
-    <audio id="audioGreen" src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/mp3"  ></audio>
-    <audio id="audioRed" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/mp3"></audio>
-    <audio id="audioYellow" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/mp3" autoplay="true" muted="muted"></audio>
-    <audio id="audioBlue" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/mp3"></audio>
+  <meta charset="UTF-8">
+  <title>Simon Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="simon.js" defer></script>
-    <title>Simon Game</title>
+  <link href='https://fonts.googleapis.com/css?family=Original+Surfer&effect=emboss' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="styles/style.css">
+
+  <audio id="clip1">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></source>
+  </audio>
+  <audio id="clip2">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></source>
+  </audio>
+  <audio id="clip3">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></source>
+  </audio>
+  <audio id="clip4">
+  	<source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></source>
+  </audio>
 </head>
 
 <body>
-    <div class="outerDiv">
-        <div class="innerDiv">
-            <h2>SIMON</h2>
-            <button id="start">Start</button>
-            <h4>COUNT</h4>
-            <div class="count">
-                <p>00</p>
-            </div>
-        </div>
-        <div class="simon">
-            <div class="top">
-                <div class="green" id="audio1" ></div>
-                <div class="red" id="audio2"></div>
-            </div>
-            <div class="bottom">
-                <div class="yellow" id="audio3"></div>
-                <div class="blue" id="audio4"></div>
-            </div>
-        </div>
 
-
+  <div id="outer-circle">
+    <div id="topleft"></div>
+    <div id="topright"></div>
+    <div id="bottomleft"></div>
+    <div id="bottomright"></div>
+    <div id="inner-circle">
+      <div id="title" class="font-effect-emboss">SIMON!</div>
+      <div id="switches">
+        <input type="checkbox" class="toggle" id="on">
+        <button class="button" id="start">Start</button>
+        <input type="checkbox" class="toggle" id="strict">
+      </div>
+      <div class="text1">
+        <span>POWER</span><span>STRICT</span>
+      </div>
+      <div id="turn"></div>
+      <div class="text2">
+        COUNT
+      </div>
     </div>
+  </div>
+
+  <script  src="js/index.js"></script>
 
 </body>
-
 </html>
