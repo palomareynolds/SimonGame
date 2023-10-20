@@ -12,6 +12,7 @@ let on = false;
 let win;
 
 const turnCounter = document.querySelector("#turn");
+console.log("")
 
 
 
