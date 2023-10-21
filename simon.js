@@ -11,8 +11,17 @@ let noise = true;
 let on = false;
 let win;
 
+const turnCounter = document.querySelector("#turn")
 const turnCounter = document.querySelector("#turn");
-console.log("")
+const turnCounter = document.querySelector("#turn");
+const turnCounter = document.querySelector("#turn");
+const turnCounter = document.querySelector("#turn");
+const turnCounter = document.querySelector("#turn");
+const turnCounter = document.querySelector("#turn");
+const turnCounter = document.querySelector("#turn");
+
+
+
 
 
 
