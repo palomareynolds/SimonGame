@@ -104,7 +104,7 @@ function two() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "tomato"
+    topRight.style.backgroundColor = "tomato"
 }
 
 function three() {
@@ -113,7 +113,7 @@ function three() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "yellow"
+    bottomLeft.style.backgroundColor = "yellow"
 }
 
 function four() {
@@ -122,5 +122,102 @@ function four() {
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "lightskyblue"
+    bottomRight.style.backgroundColor = "lightskyblue"
+}
+
+function clearColor() {
+    topLeft.style.backgroundColor = "darkgreen";
+    topRight.style.backgroundColor = "darkred";
+    bottomLeft.style.backgroundColor = "goldenrod";
+    bottomRight.style.backgroundColor = "darkblue";
+}
+
+topLeft.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(1);
+        check();
+        one();
+        if (!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }
+    }
+});
+
+topRight.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(2);
+        check();
+        one();
+        if (!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }
+    }
+});
+
+bottomLeft.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(3);
+        check();
+        one();
+        if (!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }
+    }
+});
+
+bottomLeft.addEventListener('click', (event) => {
+    if (on) {
+        playerOrder.push(4);
+        check();
+        one();
+        if (!win) {
+            setTimeout(() => {
+                clearColor();
+            }, 300);
+        }
+    }
+});
+
+function check() {
+    if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1]) 
+        good = false;
+    if (playerOrder.length === 20 && good) {
+        winGame();
+    } 
+    if (good === false) {
+        flashColor();
+        turnCounter.innerHTML = "NO!";
+        setTimeout(() => {
+            turnCounter.innerHTML = turn;
+            clearColor();
+
+            if (strict) {
+                //play() reset the game
+                play();
+            } else {
+                compTurn = true;
+                flash = 0;
+                playerOrder = [];
+                good = true;
+                intervalId = setInterval(gameTurn, 800);
+            }
+        }, 800);
+        noise = false;
+    }
+
+    if (turn === playerOrder.length && good && !win) {
+        turn++;
+        playerOrder = [];
+        compTurn = true;
+        flash = 0;
+        turnCounter.innerHTML = turn;
+        intervalId = setInterval(gameTurn, 800);
+    }
+
 }
