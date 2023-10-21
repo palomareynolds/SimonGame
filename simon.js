@@ -230,7 +230,7 @@ function check() {
 
 function winGame() {
     flashColor();
-    turnCounter.innerHTML = 'WIN';
+    turnCounter.innerHTML = 'WIN!';
     on = false;
     win = true;
 }
