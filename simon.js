@@ -1,141 +1,41 @@
 
-let order = []
-let playerOrder = [];
-let flash;
-let turn;
-let good;
-let compTurn;
+let order = [] // keep track of the order of the lights
+let playerOrder = []; //order that the plays press the color
+let flash; //number of flahses 
+let turn; //what turn we are on
+let good; // true/false weather is the player are doind irght/wrong
+let compTurn; //true/false computers turn platyer turn
 let intervalId;
-let strict = false;
-let noise = true;
-let on = false;
-let win;
-
-const turnCounter = document.querySelector("#turn")
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-const turnCounter = document.querySelector("#turn");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// Hints!
-    // define your variables beforehand
-
-
-
-
-
-
-
-
-
-
-
-
-// ---------nothing to do with
-
-
-
-
-// /*-------------------------------- Constants --------------------------------*/
-// const colors = ["Green", "Red", "Yellow", "Blue"]
-
-
-// /*-------------------------------- Variables --------------------------------*/
-// let count = 1;
-// let turnColors = [];
-// let color = "";
-
-// /*------------------------ Cached Element References ------------------------*/
-// // Buttons
-// // const startBtn = document.getElementById("start");
-// const audioGreen = document.getElementById("audio1");
-// const audioRed = document.getElementById("audio2");
-// const audioYellow = document.getElementById("audio3");
-// const audioBlue = document.getElementById("audio4");
-// // const green = document.getElementsByClassName("green");
-// // const topDiv = document.getElementsByClassName("top");
-
-// /*----------------------------- Event Listeners -----------------------------*/
-//     // startBtn.addEventListener("click", init);
-
-//     // audioGreen.addEventListener("click", userColors);
-    
-
-
-// /*-------------------------------- Functions --------------------------------*/
-// // function init() {
-// //         randomColor()
-// //         playSound(turnColors)
-// //         userColors()
-// // }
-
-// // function randomColor() {
-// //     let random = Math.floor(Math.random() * colors.length)
-// //     color = colors[random]
-// //     turnColors.push(color)
-// //     console.log(turnColors)
-// // }
-
-// // function playSound(colorsArr) {
-// //     for(color of colorsArr) {
-// //         document.getElementById(`audio${color}`).play()
-// //     }
-// // }
-
-// // function userColors(e) {
-// //     console.log(e.target)
-// // }
-
-
-
-
-
-
-// audioGreen.addEventListener("click", function() {
-//     document.getElementById("audioGreen").play();
-// });
-
-// audioRed.addEventListener("click", function() {
-//     document.getElementById("audioRed").play();
-// });
-
-// audioYellow.addEventListener("click", function() {
-//     document.getElementById("audioYellow").play();
-// });
-
-// audioBlue.addEventListener("click", function() {
-//     document.getElementById("audioBlue").play();
-// });
-
-
-
-
+let strict = false; //stric button on or off
+let noise = true; //
+let on = false; //if the power button is on/off
+let win; //if the player has won the game
+
+
+// We create a variable for every element we are going to interact with
+const turnCounter = document.querySelector("#turn"); 
+const topLeft = document.querySelector("#topleft");
+const topRight = document.querySelector("#topright");
+const bottomLeft = document.querySelector("#bottomleft");
+const bottomRight = document.querySelector("#bottomright");
+const strictButton = document.querySelector("#strict");
+const onButton = document.querySelector("#on");
+const startButton = document.querySelector("#start");
+
+strictButton.addEventListener('click', (event) => {
+    if (strictButton.checked ===  true) {
+        strict = true;
+    } else {
+        strict = false;
+    }
+})
+
+onButton.addEventListener('click', (event) => {
+    if (onButton.checked === true) {
+        on = true;
+        turnCounter.innerHTML = "-"
+    } else {
+        on = false;
+        turnCounter.innerHTML = ""
+    }
+})
