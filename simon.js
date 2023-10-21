@@ -91,34 +91,34 @@ function gameTurn() {
 
 function one() {
     if (noise) {
-        var audio = document.getElementById("clip1")
+        let audio = document.getElementById("clip1");
         audio.play();
     }
     noise = true;
-    topLeft.style.backgroundColor = "lightgreen"
+    topLeft.style.backgroundColor = "lightgreen";
 }
 
 function two() {
     if (noise) {
-        var audio = document.getElementById("clip2")
+        let audio = document.getElementById("clip2");
         audio.play();
     }
     noise = true;
-    topRight.style.backgroundColor = "tomato"
+    topRight.style.backgroundColor = "tomato";
 }
 
 function three() {
     if (noise) {
-        var audio = document.getElementById("clip3")
+        let audio = document.getElementById("clip3");
         audio.play();
     }
     noise = true;
-    bottomLeft.style.backgroundColor = "yellow"
+    bottomLeft.style.backgroundColor = "yellow";
 }
 
 function four() {
     if (noise) {
-        var audio = document.getElementById("clip4")
+        let audio = document.getElementById("clip4");
         audio.play();
     }
     noise = true;
@@ -130,6 +130,13 @@ function clearColor() {
     topRight.style.backgroundColor = "darkred";
     bottomLeft.style.backgroundColor = "goldenrod";
     bottomRight.style.backgroundColor = "darkblue";
+}
+
+function flashColor() {
+    topLeft.style.backgroundColor = "lightgreen";
+    topRight.style.backgroundColor = "tomato";
+    bottomLeft.style.backgroundColor = "yellow";
+    bottomRight.style.backgroundColor = "lightskyblue";
 }
 
 topLeft.addEventListener('click', (event) => {
@@ -149,7 +156,7 @@ topRight.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(2);
         check();
-        one();
+        two();
         if (!win) {
             setTimeout(() => {
                 clearColor();
@@ -162,7 +169,7 @@ bottomLeft.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(3);
         check();
-        one();
+        three();
         if (!win) {
             setTimeout(() => {
                 clearColor();
@@ -171,11 +178,11 @@ bottomLeft.addEventListener('click', (event) => {
     }
 });
 
-bottomLeft.addEventListener('click', (event) => {
+bottomRight.addEventListener('click', (event) => {
     if (on) {
         playerOrder.push(4);
         check();
-        one();
+        four();
         if (!win) {
             setTimeout(() => {
                 clearColor();
@@ -219,5 +226,11 @@ function check() {
         turnCounter.innerHTML = turn;
         intervalId = setInterval(gameTurn, 800);
     }
+}
 
+function winGame() {
+    flashColor();
+    turnCounter.innerHTML = 'WIN';
+    on = false;
+    win = true;
 }
