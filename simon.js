@@ -28,14 +28,23 @@ strictButton.addEventListener('click', (event) => {
     } else {
         strict = false;
     }
-})
+});
 
 onButton.addEventListener('click', (event) => {
     if (onButton.checked === true) {
         on = true;
-        turnCounter.innerHTML = "-"
+        turnCounter.innerHTML = "-";
     } else {
         on = false;
-        turnCounter.innerHTML = ""
+        turnCounter.innerHTML = "";
+        clearColor();
+        clearInterval(intervalId);
+
+    }
+});
+
+startButton.addEventListener('click', (event) => {
+    if (on || win) {
+        play();
     }
 })
